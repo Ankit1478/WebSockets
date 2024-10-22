@@ -17,7 +17,8 @@ function chat(data:any , ws:WebSocket){
         }
         //add client to Room 
         room[roomId].add(ws);
-    }else{
+    }
+     if(type=='message'){
         room[roomId].forEach((client:any)=>{
             if(client.readyState === client.OPEN){
                 client.send(text);
